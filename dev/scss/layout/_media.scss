@@ -1,0 +1,105 @@
+@use '../config/mixin-media'as mda;
+@use '../config/functions'as f;
+
+// $tablet: 768px;
+
+//- ---------------  TAMAÑO DE PANTALLA SMALL (sm) ----------------------------
+
+$small: 576px;
+// $small: 445px;
+
+@media only screen and (min-width: f.rem($small)) {
+	@include mda.small();
+
+	body {
+		// background-color: peru;
+	}
+
+	.banner {
+		&__img {
+			width: 70%;
+			// top: -7rem;
+			margin: 0 auto;
+		}
+
+		&::before {
+			top: -2rem;
+			// width: 85%;
+			min-height: 35rem;
+		}
+	}
+
+	.hero {
+		padding: 5rem;
+
+		&__title {
+			margin-top: -5rem;
+		}
+	}
+}
+
+//- ---------------  TAMAÑO DE PANTALLA MEDIUM (md) ----------------------------
+$medium: 768px;
+
+@media only screen and (min-width: f.rem($medium)) {
+	@include mda.medium();
+
+	body {
+		background-color: rgb(115, 255, 0);
+	}
+	// .nav {
+	// 	position: fixed;
+	// }
+	// .menu {
+	// 	top: 0;
+	// 	z-index: 115;
+	// 	left: 28%;
+	// 	display: flex;
+	// 	width: 65%;
+	// 	height: 65px;
+	// 	background: none;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	transition: top 0.45s;
+	// 	&__item {
+	// 		// position: absolute;
+	// 		top: 0;
+	// 		margin: 0;
+	// 	}
+	// 	&__item:first-child,
+	// 	&__item:last-child {
+	// 		border-radius: 0;
+	// 	}
+	// 	&__link {
+	// 		margin: 0;
+	// 		font-weight: initial;
+	// 	}
+	// }
+	// .hamburger {
+	// 	display: none;
+	// }
+}
+
+//- ---------------  TAMAÑO DE PANTALLA LARGE (lg) ----------------------------
+$large: 992px;
+
+@media only screen and (min-width: f.rem($large)) {
+	@include mda.large();
+
+	body {
+		background-color: rgb(55, 0, 128);
+		padding: 0;
+	}
+}
+
+$extra-large: 1200px;
+
+//- ---------------  TAMAÑO DE PANTALLA EXTRA LARGE (xl) ----------------------------
+@media only screen and (min-width: f.rem($extra-large)) {
+	@include mda.extra-large();
+
+	body {
+		background-color: rgb(128, 119, 0);
+		padding: 0;
+	}
+}

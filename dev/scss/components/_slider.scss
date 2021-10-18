@@ -1,0 +1,13 @@
+@use '../config/functions';
+@use '../config/mixins';
+
+.wrapper-slider {
+  @include mixins.width(90%);
+  max-width: functions.rem(1000px);
+}
+
+.slide {
+  &__img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,38 @@
+// FUNCION DE COLORES
+$primary: (dark-blue: hsl(233, 26%, 24%), lime-green: hsl(136, 65%, 51%), bright-cyan: hsl(192, 70%, 51%));
+
+@function c-p($darValor) {
+	@return map-get($primary, $darValor);
+}
+
+$neutral: (
+	grayish-blue: hsl(233, 8%, 62%),
+	light-grayish-blue: hsl(220, 14%, 96%),
+	very-light-gray: hsl(0, 0%, 98%),
+	white: hsl(0, 0%, 100%)
+);
+
+@function c-n($darValor) {
+	@return map-get($neutral, $darValor);
+}
+
+$font-size: em(16px);
+
+@function em($el, $parent:16px) {
+	@return ($el / $parent) * 1em;
+}
+
+@function rem ($el, $parent: 16px) {
+	@return ($el / $parent) * 1rem;
+}
+
+@function porcentage ($el, $parent: 16px) {
+	@return ($el / $parent) * 100%;
+}
+
+//- TODO: Funcion para hecer llamado a rutas relativas de archivos de imagenes
+$route: '../img/';
+
+@function url-img($image-extencion) {
+	@return url($route + $image-extencion);
+}

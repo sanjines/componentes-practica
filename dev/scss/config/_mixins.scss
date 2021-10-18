@@ -1,0 +1,108 @@
+@mixin centra-elem ($border: null) {
+	border-radius: $border;
+	margin: 0 auto;
+}
+
+//- ========  MIXIN PARA CENTRADO ABSOLUTO ======== -//
+@mixin centrar($horizontal: true, $vertica: true) {
+	@if ($horizonta and $vertical) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if() {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if() {
+		top: 50%;
+		transform: translate(0, 50%);
+	}
+}
+
+// Ejemplo de llamado de el moxin center
+//  &.both {
+//    @include center;
+//  }
+
+//  &.horizontal {
+//    @include center(true, false);
+//  }
+
+//  &.vertical {
+//    @include center(false, true);
+//  }
+
+//MIXIN PARA LINKS DE SEUDOELEMNTOS
+
+@mixin linx ($link, $visit, $hover, $active) {
+	a {
+		color: $link;
+
+		&:visited {
+			color: $visit;
+		}
+
+		&:hover {
+			color: $hover;
+		}
+
+		&:active {
+			color: $active;
+		}
+	}
+}
+
+// UTILIZACIONDE DE MIXIN LINKS
+// @include link-colors(#00c, #0cc, #c0c, #ccc, #cc0);
+
+// MIXIN PARA DETERMINAR EL ANCHO DE UN ELEMENTO
+@mixin width($width: 100%) {
+	width: $width;
+	margin: 0 auto;
+}
+
+// MIXIN PARA DETERMINAR EL CRECIMINTO MAXIMO ANCHO DE UN ELEMENTO
+@mixin max-width($width: 100%) {
+	width: $width;
+	margin: 0 auto;
+}
+
+// MIXIN BORDER RADIUS
+@mixin border-r($pixel) {
+	border-radius: $pixel;
+}
+
+@mixin border-radius($top-left: null, $top-right:null, $bottom-right:null, $bottom-left:null) {
+	border-radius: $top-left $top-right $bottom-right $bottom-left;
+}
+
+// FLEX BOX(SU IMPLEMENTACION ES ALGO COMPLICADO)
+@mixin flex($option, $x, $y) {
+	display: $option;
+	justify-content: $x;
+	align-items: $y;
+}
+
+//- ======== MIXIN PARA LA IMPLEMENTACION DE GRILLAS CON CSS GRID ======== -//
+@mixin col1($grid: null, $col: null, $gutter: null) {
+	@if ($grid) {
+		display: $grid;
+		grid-template-columns: $col;
+		gap: $gutter;
+	}
+}
+@mixin col($grid: null, $rep: null, $col: null, $gap: null) {
+	@if ($grid) {
+		display: $grid;
+		grid-template-columns: repeat(append($rep, $col, $separator:comma));
+		gap: $gap;
+	}
+}
+
+@mixin row($rep: null, $row: null) {
+	@if ($rep) {
+		grid-template-rows: repeat(append($rep, $row, $separator:comma));
+	}
+}
+
+// - FIN DE MIXIN

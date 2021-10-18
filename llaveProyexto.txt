@@ -1,0 +1,6 @@
+pug -w pug/pages/index.pug -o '../public/' --pretty & sass --watch scss/style.scss ../public/css/style.css
+
+
+
+/?* Para vigilar todos los cambios de todos los archivos de pug y de sass*/
+pug -w pug/pages/ -o '../public/' --pretty & sass --watch scss/ ../public/css/style.css

@@ -1,0 +1,18 @@
+header.header
+  nav.nav#topBar
+    //- COMPONENT LOGO
+    block logo
+      include ../components/logo
+    block hamburger
+      include ../components/hamburger
+  ul.menu
+    for item, index in pageTitles
+      li.menu__item
+        if index === 0
+          a.menu__link(href= 'index.html')= `${item}`
+        else
+          a.menu__link(href= `${item}.html`)= `${item}`
+  block  banner
+    include ../components/banner
+  block hero
+    include ../components/hero

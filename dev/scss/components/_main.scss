@@ -1,0 +1,14 @@
+@use '../config/functions' as f;
+
+.main {
+	grid-area: main;
+	background: orange;
+	&__path-top {
+		height: 5vh;
+		clip-path: polygon(0 100%, 100% 0, 0 0);
+		background-color: f.c-n(light-grayish-blue);
+	}
+	&__paragrafo {
+		padding: 1.5rem;
+	}
+}

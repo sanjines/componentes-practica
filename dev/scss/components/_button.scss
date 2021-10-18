@@ -1,0 +1,49 @@
+@use '../config/mixins'as m;
+@mixin btn($w: null, $h: null, $m:null, $p: null) {
+	width: $w;
+	height: $h;
+	margin: $m;
+	padding: $p;
+}
+
+.button-wrap {
+	text-align: center;
+	line-height: 50px;
+	margin: 1rem;
+}
+
+.button {
+	background: linear-gradient(to left, hsl(136, 65%, 51%), hsl(233, 26%, 24%));
+	@include m.border-radius(8px);
+	@include btn(150px, 50px,(3em auto), null);
+	display: block;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: -1px 3px 3px rgba(48, 47, 47, 0.322);
+	}
+
+	// &__icon {}
+
+	&__link {
+		display: block;
+		color: white;
+
+		font: {
+			size: 1em;
+			weight: 500;
+		}
+	}
+
+	&__link:hover {
+		text-shadow: -1px 2px 3px rgba(48, 47, 47, 0.966);
+	}
+
+	&--gray {
+		background-color: rgb(36, 34, 34);
+	}
+
+	&--tomato {
+		color: tomato;
+	}
+}

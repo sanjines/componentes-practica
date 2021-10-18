@@ -1,0 +1,11 @@
+@use '../config/mixins' as col;
+.grid {
+	@include col.col1(grid, 1fr);
+	// grid-template-rows: repeat(3, 100vh);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas: 'header' 'main' 'footer';
+}
+.header {
+	width: 100%;
+	grid-area: header;
+}

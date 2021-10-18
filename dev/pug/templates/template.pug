@@ -1,0 +1,24 @@
+doctype html
+html(lang="es")
+  block config
+    include ../config/config
+  head
+    block head
+      include ../includes/head
+      title= `${siteTitle} | ${mainPageTitle}`
+      link(rel="shortcut icon", href="../public/assets/img/favicon-32x32.png", type="image/x-icon")
+      each vincCss in vincDir
+        link(rel="stylesheet" href= `./css/${vincCss}.css`)
+  body
+    div.grid
+      block header
+        include ../blocks/header
+            //- block logo
+      //- block banner
+      block main
+      block nosotros
+      //- block acordeon
+      block footer
+        include ../blocks/footer
+    each modules in vincJs
+      script(src= `../dev/js/${modules}.js` type= 'module')

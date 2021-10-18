@@ -1,0 +1,19 @@
+-
+  let img = [
+    {
+      img1:'image1', 
+      imgText:'cruz',
+      caption: 'nelo'
+    },
+    {
+      img1:'cruz', 
+      imgText:'cambio',
+      caption: 'img_nature_wide'
+    },
+  ]
+
+for item in img
+  div.slide
+    div.slide__text
+    img(class= 'slide__img' src= `./assets/img/${item.img1}.jpg` alt= 'foto')
+    div.slide__caption= `${item.imgText}`

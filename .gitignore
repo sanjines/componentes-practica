@@ -1,0 +1,5 @@
+# Ignora archivos de configuración SASS
+.sass-cache
+
+# Ignora .vscode
+.vscode/

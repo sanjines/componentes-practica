@@ -1,0 +1,29 @@
+.hamburger {
+  position: fixed;
+  right: 20px;
+  padding: .5rem;
+  z-index: 120;
+  // line-height: calc(63 /2)px;
+  top: .8rem;
+  border: 1px solid gray;
+  color: gray;
+  cursor: pointer;
+
+  animation: {
+    name: moverDerecha;
+    duration: 1s;
+  }
+
+  // &__element {}
+}
+
+
+@keyframes moverDerecha {
+  0% {
+    transform: translate(100px) rotate(-360deg);
+  }
+
+  100% {
+    transform: translate(0px) rotate(360deg);
+  }
+}

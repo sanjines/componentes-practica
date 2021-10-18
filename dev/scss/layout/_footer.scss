@@ -1,0 +1,10 @@
+.footer {
+	background-color: rgba(78, 75, 75, 0.411);
+	// height: 20vh;
+	grid-area: footer;
+	&__path-top {
+		clip-path: polygon(0 100%, 100% 0, 0 0);
+		background-color: orange;
+		height: 5vh;
+	}
+}

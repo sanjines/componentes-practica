@@ -1,0 +1,12 @@
+extends ../templates/template
+block append acordeon
+  div.wrapper-hamburgueza
+    div.acordeon
+      for item in acordeon
+        button.acordeon__button
+          span.acordeon__click= `${item.acordeonSectionTitle.toUpperCase()}`
+        div.acordeon__nav
+          if item.child.length > 0
+            each sub in item.child
+              li.acordeon__item
+                a.acordeon__link= `${sub.toUpperCase()}`
